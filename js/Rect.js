@@ -1,14 +1,20 @@
-/** 创建一个矩形 n为大小 color为正常的color2为不同的*/
-function Rect(n,color,color2){
+/** 创建一个矩形 n为大小*/
+function Rect(n,color){
 	createjs.Shape.call(this);
 	this.setRectType = function(type){
 		this._RectType = type;
 		switch (type){
 			case 1:
-				this.setColor(color);
+				this.setColor("#"+color[0]+color[1]+color[2]+color[3]+color[4]+color[5]);
 				break;
 			case 2:
-				this.setColor(color2);
+				 var m=1.8-n/9;
+				 this.setColor("#"+parseInt(color[0]/m)
+				 				  +parseInt(color[1]/m)
+				 				  +parseInt(color[2]/m)
+				 				  +parseInt(color[3]/m)
+				 				  +parseInt(color[4]/m)
+				 				  +parseInt(color[5]/m));
 				break;
 		}
 	}
@@ -26,4 +32,5 @@ function Rect(n,color,color2){
 	}
 	this.setRectType(1);
 }
+//构建矩形
 Rect.prototype = new createjs.Shape();

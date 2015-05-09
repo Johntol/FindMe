@@ -8,19 +8,24 @@ stage.addChild(gameView);
 /**
  * 增加方块
  */
+//矩形一行几个
 var n = 2;
 function addRect(){
 	//随机颜色
-	var cl = parseInt(Math.random()*1000000);
-	var c2 = parseInt(Math.random()*1000000);
-	var color = "#" + cl;
-	var color2 = "#" + c2;
+	 var cl=[parseInt(Math.random()*10),
+	 		 parseInt(Math.random()*10),
+	 		 parseInt(Math.random()*10),
+	 		 parseInt(Math.random()*10),
+	 		 parseInt(Math.random()*10),
+	 		 parseInt(Math.random()*10)];
+	 		 var color = cl;
+	
 	//随机位置
 	var x = parseInt(Math.random()*n);
 	var y = parseInt(Math.random()*n);
 	for(var indexX = 0;indexX < n;indexX++){
 		for(var indexY = 0; indexY < n;indexY++){
-			var r = new Rect(n,color,color2);
+			var r = new Rect(n,color);
 			gameView.addChild(r);
 			r.x = indexX;
 			r.y = indexY;	
